@@ -1,10 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
+import ShoppingCart  from './ShoppingCart';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
     useParams
   } from "react-router-dom";
 
@@ -47,12 +45,12 @@ function UserDetail(props){
             console.log("User");
             console.log(user);
 
-            if(user.shoppingCarUser !== null)
+            if(user.shoppingCarUser !== null && user.shoppingCarUser.length >0) 
             {
                 return (
                     <React.Fragment>
         
-                        <div className="col-lg-6 mb-4">
+                        <div className="col-lg-10 mb-4">
                             <div className="card shadow mb-4">
                                 <div className="card-header py-3">
                                     <h5 className="m-0 font-weight-bold text-gray-800">{user.firstName} {user.lastName}</h5>
@@ -63,14 +61,23 @@ function UserDetail(props){
                                     </div>
                                     <p>Email: {user.email}</p>
                                     
-                                        <div>
-                                            <h5 className="m-0 font-weight-bold text-gray-800">Carrito de compras</h5>
-                                            <p>Items: {user.shoppingCarUser.itemsQuantity}</p>
-                                            <p>Total: {user.shoppingCarUser.totalPrice}</p>
-                                            <p>Fecha: {user.shoppingCarUser.date}</p>
-                                            <p>Estado: {user.shoppingCarUser.statusShoppingCart.status}</p>
-        
+                                    <div className="col-lg-6 mb-4">						
+                                    <div className="card shadow mb-4">
+                                        <div className="card-header py-3">
+                                            <h6 className="m-0 font-weight-bold text-gray-800">Carrito de compras</h6>
                                         </div>
+                                        <div className="card-body">
+                                            <div className="row">
+                                                {
+                                                    user.shoppingCarUser.map((shoppingCarUser,index)=>{
+                                                            return  <ShoppingCart  {...shoppingCarUser}   key={index} />
+                                                        })
+                                                }
+               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
     
                                 </div>
                             </div>
