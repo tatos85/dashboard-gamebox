@@ -1,9 +1,10 @@
 import React from 'react';
 import image from '../assets/images/logo-DH.png';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
-import LastMovieInDb from './LastMovieInDb';
-import ContentRowMovies from './ContentRowMovies';
+import CategoriesInDb from './CategoriesInDb';
+import LastProductInDb from './LastProductInDb';
+import UserDetail from './UserDetail'
+// import ContentRowMovies from './ContentRowMovies';
 import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
@@ -53,11 +54,11 @@ function SideBar(){
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item nav-link">
+                {/* <li className="nav-item nav-link">
                 <Link className="nav-link" to="/ContentRowMovies">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Tables</span></Link>
-                </li>
+                </li> */}
 
                                 {/*<!-- Nav Item - Tables -->*/}
                <li className="nav-item nav-link">
@@ -91,15 +92,21 @@ function SideBar(){
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/GenresInDb">
-                    <GenresInDb />
+                <Route path="/categorias">
+                    <CategoriesInDb />
                 </Route>
-                <Route path="/LastMovieInDb">
-                    <LastMovieInDb />
+                <Route path="/ultimoProducto">
+                    <LastProductInDb />
                 </Route>
-                <Route path="/ContentRowMovies">
+                <Route path="/ultimoProducto">
+                    <LastProductInDb />
+                </Route>
+                <Route path="/usuarios/:id">
+                    <UserDetail />
+                </Route>
+                {/* <Route path="/ContentRowMovies">
                     <ContentRowMovies />
-                </Route>
+                </Route> */}
                 <Route path="/SearchMovies">
                     <SearchMovies />
                 </Route>
