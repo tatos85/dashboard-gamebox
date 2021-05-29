@@ -7,65 +7,64 @@ import UserDetail from './UserDetail'
 // import ContentRowMovies from './ContentRowMovies';
 import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
-import {Link, Route, Switch} from 'react-router-dom';
 import ProductDetail from './ProductDetail';
+import ProductsTable from './ProductsTable';
+import LastUserInDb from './LastUserInDb';
+
+import {Link, Route, Switch} from 'react-router-dom';
 
 function SideBar(){
     return(
         <React.Fragment>
-            {/*<!-- Sidebar -->*/}
+      
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-                {/*<!-- Sidebar - Brand -->*/}
+              
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
                         <img className="w-100" src={logo} alt="Gamebox"/>
                     </div>
                 </a>
 
-                {/*<!-- Divider -->*/}
+              
                 <hr className="sidebar-divider my-0"/>
 
-                {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard - Gamebox</span></Link>
                 </li>
 
-                {/*<!-- Divider -->*/}
+     
                 <hr className="sidebar-divider"/>
 
-                {/*<!-- Heading -->*/}
+ 
                 <div className="sidebar-heading">Actions</div>
 
-                {/*<!-- Nav Item - Pages -->*/}
+              
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
+                <Link className="nav-link" to="/productos">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
-                    </Link>
+                        <span>Listado productos</span>
+                </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastMovieInDb">
+                    <Link className="nav-link" to="/categorias">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
+                        <span>Categorías</span></Link>
+                </li>
+               
+                <li className="nav-item">
+                    <Link className="nav-link" to="/ultimoProducto">
+                        <i className="fas fa-fw fa-chart-area"></i>
+                        <span>Último producto</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Tables -->*/}
-                {/* <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
-                </li> */}
-
-                                {/*<!-- Nav Item - Tables -->*/}
-               <li className="nav-item nav-link">
-                <Link className="nav-link" to="/SearchMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Search</span></Link>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/ultimoUsuario">
+                        <i className="fas fa-fw fa-chart-area"></i>
+                        <span>Último usuario</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -82,8 +81,8 @@ function SideBar(){
                 <Route path="/ultimoProducto">
                     <LastProductInDb />
                 </Route>
-                <Route path="/ultimoProducto">
-                    <LastProductInDb />
+                <Route path="/ultimoUsuario">
+                    <LastUserInDb />
                 </Route>
                 <Route path="/usuarios/:id">
                     <UserDetail />
@@ -94,9 +93,11 @@ function SideBar(){
                 <Route path="/SearchMovies">
                     <SearchMovies />
                 </Route>
+                <Route path="/productos">
+                    <ProductsTable />
+                </Route>
                 <Route component={NotFound} />
             </Switch>
-            {/*<!-- End Microdesafio 2 -->*/}
         </React.Fragment>
     )
 }
