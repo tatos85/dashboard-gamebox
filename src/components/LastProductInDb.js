@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
+
 
 function LastProductInDb(){
 
@@ -54,7 +56,7 @@ function LastProductInDb(){
                             </div>
                             <p>Nombre: {product.name}</p>
                             <p>Descripción: {product.description}</p>
-                            <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Ver detalle</a>
+                            <Link className="btn btn-danger" target="_blank" rel="nofollow" to={"productos/"+product.id} > Ver detalle</Link>
                         </div>
                     </div>
                 </div>

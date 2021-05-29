@@ -8,6 +8,7 @@ import UserDetail from './UserDetail'
 import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
+import ProductDetail from './ProductDetail';
 
 function SideBar(){
     return(
@@ -70,24 +71,7 @@ function SideBar(){
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
-            {/*<!-- End of Sidebar -->*/}
 
-            {/*<!-- Microdesafio 1 -->*/}
-            {/*<!--<Route exact path="/">
-                <ContentWrapper />
-            </Route>
-            <Route path="/GenresInDb">
-                <GenresInDb />
-            </Route>
-            <Route path="/LastMovieInDb">
-                <LastMovieInDb />
-            </Route>
-            <Route path="/ContentRowMovies">
-                <ContentRowMovies />
-            </Route>*/}
-            {/*<!-- End Microdesafio 1 -->*/}
-
-            {/*<!-- End Microdesafio 2 -->*/}
             <Switch>
                 <Route exact path="/">
                     <ContentWrapper />
@@ -104,9 +88,9 @@ function SideBar(){
                 <Route path="/usuarios/:id">
                     <UserDetail />
                 </Route>
-                {/* <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
-                </Route> */}
+                <Route path="/productos/:id">
+                    <ProductDetail />
+                </Route>
                 <Route path="/SearchMovies">
                     <SearchMovies />
                 </Route>
