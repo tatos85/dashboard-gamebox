@@ -26,8 +26,7 @@ function LastProductsBuyed(){
       } else if (!isLoaded && products.length ===0) {
         return <div>Loading...</div>;
       } else {
-          console.log("Productos");
-          console.log(products);
+          
         return (
 			<div className="container-fluid">
 					<div className="row">
