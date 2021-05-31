@@ -51,7 +51,7 @@ function LastProductsBuyed(){
 														style={{ width: '90%', height: '200px', objectFit: 'cover' }} 
 													/>
 												</div>
-												<p>Precio: $ {product.price} </p>
+												<p>Precio: $ {new Intl.NumberFormat("es-CO").format(product.price) } </p>
 												<p>{product.parentCategory} - {product.category} </p>
 												<Link className="btn btn-danger" target="_blank" rel="nofollow" to={"/productos/detalle/"+product.id} > Ver detalle</Link>
 											</div>
