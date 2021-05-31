@@ -75,13 +75,13 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to="/ultimoProducto">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Último producto</span></Link>
+                        <span>Último producto creado</span></Link>
                 </li>
 
                 <li className="nav-item">
                     <Link className="nav-link" to="/ultimoUsuario">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Último usuario</span></Link>
+                        <span>Último usuario creado</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
