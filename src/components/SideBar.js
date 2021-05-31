@@ -12,6 +12,7 @@ import ProductsTable from './ProductsTable';
 import LastUserInDb from './LastUserInDb';
 
 import {Link, Route, Switch} from 'react-router-dom';
+import LastProductsBuyed from './LastProductsBuyed';
 
 function SideBar(){
     return(
@@ -42,6 +43,21 @@ function SideBar(){
                 <div className="sidebar-heading">Actions</div>
 
               
+                
+                <li className="nav-item">
+                <Link className="nav-link" to="/productos/mas-vendidos">
+                        <i className="fas fa-fw fa-folder"></i>
+                        <span>Productos más vendidos</span>
+                </Link>
+                </li>
+
+                <li className="nav-item">
+                <Link className="nav-link" to="/productos/ultimos-vendidos">
+                        <i className="fas fa-fw fa-folder"></i>
+                        <span>Ultimos productos vendidos</span>
+                </Link>
+                </li>
+
                 <li className="nav-item">
                 <Link className="nav-link" to="/productos">
                         <i className="fas fa-fw fa-folder"></i>
@@ -87,8 +103,17 @@ function SideBar(){
                 <Route path="/usuarios/:id">
                     <UserDetail />
                 </Route>
-                <Route path="/productos/:id">
+                <Route exact path="/productos">
+                    <ProductsTable />
+                </Route>
+                <Route path="/productos/detalle/:id">
                     <ProductDetail />
+                </Route>
+                <Route path="/productos/ultimos-vendidos">
+                    <LastProductsBuyed />
+                </Route>
+                <Route path="/productos/mas-vendidos">
+                    <LastProductsBuyed />
                 </Route>
                 <Route path="/SearchMovies">
                     <SearchMovies />

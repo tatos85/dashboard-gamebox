@@ -56,7 +56,7 @@ function LastProductInDb(){
                             </div>
                             <p>Nombre: {product.name}</p>
                             <p>Descripción: {product.description}</p>
-                            <Link className="btn btn-danger" target="_blank" rel="nofollow" to={"productos/"+product.id} > Ver detalle</Link>
+                            <Link className="btn btn-danger" target="_blank" rel="nofollow" to={"/productos/detalle/"+product.id} > Ver detalle</Link>
                         </div>
                     </div>
                 </div>

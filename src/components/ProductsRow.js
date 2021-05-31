@@ -7,7 +7,7 @@ function ProductsRow(props){
                     <td>{props.name}</td>
                     <td>{props.price}</td>
                     <td>{props.categories.name}</td>
-                    <td> <Link className="btn btn-danger" target="_blank" rel="nofollow" to={"productos/"+props.id} > Ver detalle</Link></td>
+                    <td> <Link className="btn btn-danger" target="_blank" rel="nofollow" to={"/productos/detalle/"+props.id} > Ver detalle</Link></td>
                 </tr>
             )
     }
