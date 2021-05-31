@@ -13,6 +13,7 @@ import LastUserInDb from './LastUserInDb';
 
 import {Link, Route, Switch} from 'react-router-dom';
 import LastProductsBuyed from './LastProductsBuyed';
+import MostProductsSelled from './MostProductsSelled'
 
 function SideBar(){
     return(
@@ -113,7 +114,7 @@ function SideBar(){
                     <LastProductsBuyed />
                 </Route>
                 <Route path="/productos/mas-vendidos">
-                    <LastProductsBuyed />
+                    <MostProductsSelled />
                 </Route>
                 <Route path="/SearchMovies">
                     <SearchMovies />
