@@ -116,9 +116,9 @@ function SideBar(){
                 <Route path="/productos/mas-vendidos">
                     <MostProductsSelled />
                 </Route>
-                <Route path="/SearchMovies">
+                {/* <Route path="/SearchMovies">
                     <SearchMovies />
-                </Route>
+                </Route> */}
                 <Route path="/productos">
                     <ProductsTable />
                 </Route>
